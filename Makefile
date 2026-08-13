@@ -54,7 +54,11 @@ test-6-expression-reader: stack.o operand.o arithmetic-expression.o big-integer-
 test-mem: test-2-stack
 	valgrind --error-exitcode=1 --leak-check=full ./test-2-stack
 
+test-run: main
+	./main
+
 clean:
 	$(RM) *.o *.gc* test/*.o test/*.gc* *.dSYM $(TESTS) core main $(CATCH)
 
-.PHONY: all main test-all test-mem clean test-1-node test-2-stack test-3-operand test-4-arithmetic-expression test-5a-big-integer-arithmetic test-5b-big-integer-arithmetic test-6-expression-reader
+.PHONY: all main test-all test-run test-mem clean test-1-node test-2-stack test-3-operand test-4-arithmetic-expression test-5a-big-integer-arithmetic test-5b-big-integer-arithmetic test-6-expression-reader
+

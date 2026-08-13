@@ -152,6 +152,25 @@ expression should be a long line when you generate them!
     3. You should get an email regarding the status of your build, if it does
        not pass, keep trying.
 
+## Building and Testing
+
+A `Makefile` is provided to automate compilation and testing:
+- **Compile main calculator program**: `make main`
+- **Run main calculator**: `make test-run` or `./main`
+- **Run all unit tests**: `make test-all`
+- **Run individual unit tests**:
+  - `make test-1-node`: Node unit tests.
+  - `make test-2-stack`: Stack unit tests.
+  - `make test-3-operand`: Operand unit tests.
+  - `make test-4-arithmetic-expression`: Arithmetic expression unit tests.
+  - `make test-5a-big-integer-arithmetic`: Big integer arithmetic unit tests part 1.
+  - `make test-5b-big-integer-arithmetic`: Big integer arithmetic unit tests part 2.
+  - `make test-6-expression-reader`: Expression reader unit tests.
+- **Run memory leak check**: `make test-mem` (runs Valgrind on stack tests).
+- **Clean build artifacts**: `make clean`
+
+> **Note for macOS / Xcode users**: Valgrind is not natively supported on macOS. If you are using macOS command line tools (Xcode), you cannot directly execute `valgrind` / `make test-mem` locally. Please launch a **GitHub Codespaces** instance on GitHub (or use a Linux container) to run memory leak checks.
+
 ## Important Notes:
 - Projects will be graded on whether they correctly solve the problem, and
   whether they adhere to good programming practices.
